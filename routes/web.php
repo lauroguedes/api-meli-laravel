@@ -13,7 +13,7 @@
 
 Route::get('meli/login', 'MeliController@redirectToProvider')->name('meli.login');
 Route::get('meli/callback', 'MeliController@handleProviderCallback');
-Route::post('meli/notify', 'MeliController@meliNotify');
+Route::post('meli/notifications', 'MeliController@notifications');
 
 Route::get('/', function () {
     return view('welcome');

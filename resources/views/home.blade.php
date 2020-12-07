@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h4>Integrações</h4>
+                    <h4>Integrations</h4>
                     @if(auth()->user()->integrations)
                         @foreach (auth()->user()->integrations as $integration)
                             <div><strong>Token</strong>: {{ $integration->token }}</div>

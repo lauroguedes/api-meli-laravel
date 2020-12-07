@@ -43,22 +43,22 @@ class MeliController extends Controller
         return view('home');
     }
 
-    public function meliNotify(Request $request)
+    public function notifications(Request $request)
     {
         /*
-        * 1) Recebe o Json com o recurso que sofreu alteração
-        * 2) Pega o token do usuário através do id vindo da requisição
-        * (Esse id deverá ser gravado em algum lugar após o usuário ter
-        * tipo feito a autenticação no Meli)
-        * 3) Manda a requisição para o recurso colocando o token para obter mais
-        * detalhes da alteração
-        * 4) Caso o token esteja expirado (irá retornar um erro em vez dos detalhes)
-        * deverá ser feito uma nova autenticação
-        * com o refresh_token que fora gravado também quando o usuário fez a
-        * primeira autenticação
-        * 5) Diante dos detalhes em mãos realizar o fluxo de criação/alteração de pedidos
-        * 6) Ver a possibilidade de atualizar o refresh token para que nunca precise
-        * o usuário realizar a autenticação manualmente
+        * 1) Receive Json with the resource that has changed
+        * 2) Get the user's token using the id from the request
+        * (This id must be recorded somewhere after the user has
+        * type done authentication in Meli)
+        * 3) Send the request to the resource by placing the token to get more
+        * details of the change
+        * 4) If the token is expired (will return an error instead of details)
+        * a new authentication must be made
+        * with the refresh_token that was also recorded when the user made the
+        * first authentication
+        * 5) Given the details in hand, perform the order creation / change flow
+        * 6) See the possibility to update the refresh token so you never need to
+        * the user performs authentication manually
         */
 
         $integration = Integration::with('user')
